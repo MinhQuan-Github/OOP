@@ -138,6 +138,7 @@ int main(){
     int n;
     cout<<"Nhập số phần tử của mảng:"; cin >> n;
     int *a = new int[n];
+    //bubbleSort(a,n,ascending);
     cout<<"Nhập mảng a:"<<endl;
     input(a,n);
     cout<<"Mảng vừa nhập:";
