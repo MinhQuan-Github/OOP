@@ -7,6 +7,7 @@ bool descending(Hocsinh l, Hocsinh r);
 bool ascending(Hocsinh l, Hocsinh r);
 
 class DSHS{
+    private:
         const int n; // số học sinh trong danh sách
         Hocsinh *data; //mảng động chứa ds học sinh
     public:

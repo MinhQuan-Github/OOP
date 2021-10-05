@@ -1,8 +1,11 @@
 #ifndef HOCSINH_H
 #define HOCSINH_H
 #include <string>
+
 using namespace std;
+
 class Hocsinh{
+    private:
         string ht;
         double toan, van, dtb;
         string xl;
