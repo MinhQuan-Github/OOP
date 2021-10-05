@@ -5,7 +5,7 @@
 
 bool descending(int l, int r);
 bool ascending(int l , int r);
-//void swap(int &num1, int &num2);
+void swap(int &num1, int &num2);
 
 class Mang {
     private:

@@ -4,6 +4,8 @@
 
 using namespace std;
 
+
+
 int main () {
     Mang A;
     A.setArr(5);
