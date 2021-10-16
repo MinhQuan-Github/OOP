@@ -11,6 +11,7 @@ class Matrix {
         int **data;
     public:
         Matrix(int n = 0);
+        Matrix(int **data);
         Matrix(const Matrix &);
         ~Matrix(){
             for (int i = 0 ; i < n ; i++){
@@ -23,7 +24,8 @@ class Matrix {
         Matrix operator + (const Matrix &);
         const Matrix &operator = (const Matrix &);
         int operator () (int i, int j);
-        //int &operator (int *) ();
+        //int operator () (Matrix &);
+        double operator()(const Matrix&, int);
         friend istream &operator >> (istream &in ,  Matrix &);
         friend ostream &operator << (ostream &out ,const Matrix &);
 };

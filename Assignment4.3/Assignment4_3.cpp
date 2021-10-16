@@ -7,12 +7,14 @@ int main () {
     Matrix M1(4);
     cin >> M1;
     cout << M1;
-    Matrix M2(4);
-    cin >> M2;
-    cout << M2;
-    Matrix M = M1 * M2;
-    cout << M;
-    cout << M1 + M2;
-    cout << M1 - M2;
+    cout << M1(2,4);
+    cout << (M1);
+    // Matrix M2(4);
+    // cin >> M2;
+    // cout << M2;
+    // Matrix M = M1 * M2;
+    // cout << M;
+    // cout << M1 + M2;
+    // cout << M1 - M2;
     return 0;
 }

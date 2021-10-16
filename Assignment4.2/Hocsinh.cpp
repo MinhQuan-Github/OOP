@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 Hocsinh::Hocsinh(string hoten , int van , int toan){
     this->hoten = hoten;
     this->van   = van;
@@ -112,4 +111,5 @@ bool operator !=(Hocsinh &a , Hocsinh &b){               // Hàm toán tử ==
     if (a.diemtb() != b.diemtb()) return true;
     return false;
 }
+
 

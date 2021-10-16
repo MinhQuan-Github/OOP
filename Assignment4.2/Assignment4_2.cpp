@@ -26,5 +26,6 @@ int main () {
     if (C.xeploai() == 2) cout << " => Hoc luc TRUNG BINH " << endl;
     if (C.xeploai() == 3) cout << " => Hoc luc KHA " << endl;
     if (C.xeploai() == 4) cout << " => Hoc luc GIOI " << endl;
+    int n; 
     return 0;
 }

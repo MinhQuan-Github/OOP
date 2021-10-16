@@ -13,6 +13,15 @@ Matrix::Matrix(int n):n(n){
         for (int j = 0 ; j < n ; j++)
             this->data[i][j] = 0;
 }
+Matrix::Matrix(int **data):n(sizeof(**data)/sizeof(int)){
+    this->data = new int *[n];
+    for (int i = 0 ; i < n ; i ++) {
+        this->data[i] = new int [n];
+    }
+    for (int i = 0 ; i < n ; i++)
+        for (int j = 0 ; j < n ; j++)
+            this->data[i][j] = data[i][j];
+}
 Matrix::Matrix(const Matrix &k):n(k.n){
     for (int i = 0 ; i < n ; i++)
         for (int j = 0 ; j < n ; j++)
@@ -52,7 +61,26 @@ const Matrix &Matrix::operator = (const Matrix &k){
 int Matrix::operator () (int i, int j){
     return this->data[i][j];
 }
-//int &operator (int *) ()
+double Matrix::operator()(const Matrix& M,int){
+    double N[M.n][M.n];
+    for (int p = 0 ; p < M.n ; p++)
+        for (int q = 0 ; q < M.n ; q++)
+            N[p][q] = M.data[p][q];
+    int i , j , k ;
+    double det = 1 , t;
+    for ( i = 0 ; i < n - 1 ; i++){
+        t = N[i+1][i] / N[i][i];
+        for (j = i + 1 ; j < n ; j++){
+            if (N[j][i] != 0){
+                for (k = i ; k < n ; k++){
+                    N[j][k] = N[j][k] * t - N[i][k];
+                }
+            }
+        }
+    }
+    for (int o = 0 ; o < M.n ; o++) det *= N[o][o];
+    return det;
+}
 istream &operator >> (istream &in ,  Matrix &k){
     cout << "Nhập các hệ số : \n";
     for (int i = 0 ; i < k.n ; i++){
@@ -70,6 +98,6 @@ ostream &operator << (ostream &out ,const Matrix &k){
         }
         cout << endl;
     }
+    cout << endl;
     return out;
 }
-
