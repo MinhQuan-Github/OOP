@@ -5,17 +5,27 @@
 
 using namespace std;
 
-class SetOfInterger {
+class SetOfInteger {
     private:
         int n;
         int *data;
+        int top;
     public:
-        SetOfInterger();
-        SetOfInterger(int *data);
-        SetOfInterger(SetOfInterger &);
-        ~SetOfInterger(){ delete [] data ; }
-        
-
+        SetOfInteger(int n = 0);
+        SetOfInteger(int *data);
+        SetOfInteger(const SetOfInteger &);
+        ~SetOfInteger(){ delete [] data ; }
+        SetOfInteger operator +(const SetOfInteger &);
+        SetOfInteger operator -(const SetOfInteger &);
+        SetOfInteger operator *(const SetOfInteger &);
+        SetOfInteger operator +(int data);
+        SetOfInteger operator -(int data);
+        const SetOfInteger &operator =(const SetOfInteger &);
+        int &operator [] (int i);
+        bool operator () (int data);
+        friend ostream &operator <<(ostream &out , const SetOfInteger &);
+        bool isEmpty();
+        bool isFull();
 };
 
 
