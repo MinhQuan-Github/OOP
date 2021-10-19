@@ -4,11 +4,11 @@
 
 using namespace std;
 
-SetOfInteger::SetOfInteger(int n){          // Hàm dựng mặc định khởi tạo số lượng phần tử = 0 
+SetOfInteger::SetOfInteger(int n){                  // Hàm dựng mặc định khởi tạo số lượng phần tử = 0 
     this->n = n;
     this->data = new int [n];
 }
-SetOfInteger::SetOfInteger(int *data){      // Hàm dựng sao chép từ một mảng cho trước
+SetOfInteger::SetOfInteger(int *data){              // Hàm dựng sao chép từ một mảng cho trước
     this->n = sizeof(*data)/sizeof(int);
     for ( int i = 0 ; i < n ; i++){
         this->data[i] = data[i];
@@ -20,7 +20,7 @@ SetOfInteger::SetOfInteger(const SetOfInteger &S){  // Hàm dựng sao chép t�
         this->data[i] = S.data[i];
     }
 }
-void sort(int a[], int n){                  // sắp xếp mảng tăng dần
+void sort(int a[], int n){                          // sắp xếp mảng tăng dần
     for (int i = 0 ; i < n - 1 ; i++){
         for (int j = i + 1 ; j < n ; j++){
             if (a[i] > a[j]) swap(a[i] , a[j]);
@@ -30,7 +30,7 @@ void sort(int a[], int n){                  // sắp xếp mảng tăng dần
 SetOfInteger SetOfInteger::operator +(const SetOfInteger &S){   // Hàm hợp giữa hai tập hợp
     int number = this->n + S.n;
     int *tmp = new int [number];
-    for (int i = 0 ; i < number ; i++){
+    for (int i = 0 ; i < number ; i++){        
         tmp[i] = (i < this->n)? this->data[i] : S.data[i - this->n];
     }
     sort(tmp,number);
@@ -104,10 +104,10 @@ const SetOfInteger &SetOfInteger::operator =(const SetOfInteger &S){    //Hàm g
     }
     return *this;
 }
-int &SetOfInteger::operator [] (int i){     // Hàm lấy phần tử
+int &SetOfInteger::operator [] (int i){                                 // Hàm lấy phần tử
     return this->data[i];
 }
-bool SetOfInteger::operator () (int data){  // Hàm kiểm tra phần tử có tồn tại trong tập hợp hay không 
+bool SetOfInteger::operator () (int data){                              // Hàm kiểm tra phần tử có tồn tại trong tập hợp hay không 
     for (int i = 0 ; i < this->n ; i++){
         if (this->data[i] == data) {
             return true;
@@ -115,7 +115,7 @@ bool SetOfInteger::operator () (int data){  // Hàm kiểm tra phần tử có t
     }
     return false;
 }
-ostream &operator <<(ostream &out , const SetOfInteger &S){     // Hàm xuất tập hợp
+ostream &operator <<(ostream &out , const SetOfInteger &S){             // Hàm xuất tập hợp
     cout << "{ ";
     for (int i = 0 ; i < S.n ; i++){
         cout << S.data[i] << " ";
