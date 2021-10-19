@@ -25,10 +25,9 @@ Polynomial Polynomial::operator + (const Polynomial &P){
     Polynomial temp(level);
     for (int i = 0 ; i < level + 1 ; i++) {
         if (i < this->level + 1 && i < P.level + 1) temp.data[i] = this->data[i] + P.data[i];
-        if (i > this->level + 1) temp.data[i] = P.data[i];
-        if (i > P.level + 1)     temp.data[i] = this->data[i];
+        if (i >= this->level + 1) temp.data[i] = P.data[i];
+        if (i >= P.level + 1)     temp.data[i] = this->data[i];
     }
-    
     return temp;
 }
 Polynomial Polynomial::operator - (const Polynomial &P){

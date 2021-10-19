@@ -6,9 +6,12 @@
 using namespace std;
 
 int main () {
-    Polynomial P1(4);
+    Polynomial P1(3);
     cin >> P1;
-    cout << P1;
-    cout << P1(2);
+    Polynomial P2(5);
+    cin >> P2;
+    cout << "P1 : " << P1;
+    cout << "P2 : " << P2; 
+    cout << P1 + P2;
     return 0;
 }
