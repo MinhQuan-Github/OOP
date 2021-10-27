@@ -10,7 +10,6 @@ class Sinhvien : public Ungcuvien {
         string lop;
         float dtb;
     public:
-        //Sinhvien();
         Sinhvien(string hoten = "" , string lop = "" , float dtb = 0);
         friend istream &operator >> (istream &in , Sinhvien &);
         friend ostream &operator << (ostream &out , const Sinhvien &);

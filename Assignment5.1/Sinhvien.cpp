@@ -3,7 +3,6 @@
 #include <string>
 using namespace std;
 
-//Sinhvien::Sinhvien(){}
 Sinhvien::Sinhvien(string hoten , string lop , float dtb):Ungcuvien(hoten){
     this->lop = lop;
     this->dtb = dtb;
