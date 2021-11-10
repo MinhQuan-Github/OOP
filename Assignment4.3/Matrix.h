@@ -24,8 +24,8 @@ class Matrix {
         Matrix operator + (const Matrix &);
         const Matrix &operator = (const Matrix &);
         int operator () (int i, int j);
-        //int operator () (Matrix &);
-        double operator()(const Matrix&, int);
+        operator int() ;
+        //double operator()(const Matrix&, int);
         friend istream &operator >> (istream &in ,  Matrix &);
         friend ostream &operator << (ostream &out ,const Matrix &);
 };
